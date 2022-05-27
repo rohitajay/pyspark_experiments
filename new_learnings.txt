@@ -1,0 +1,20 @@
+
+1. We can get data from github archives too, according to date.
+cmd - wget http://data.githubarchive.org/2022-05-27-{0..23}.json.gz (in cmd tool)
+source - https://livebook.manning.com/book/spark-in-action/chapter-3/49
+
+2. Good Source to learn Spark
+- https://github.com/jgperrin/net.jgp.books.spark.ch15
+
+- https://towardsdatascience.com/create-your-first-etl-pipeline-in-apache-spark-and-python-ec3d12e2c169 (medium)
+
+3. Airflow:
+https://blog.devgenius.io/how-to-automate-etl-pipelines-with-airflow-62484ee5ef4c
+
+4. Realtime Dashboard :
+- https://livebook.manning.com/book/spark-in-action/chapter-13/80
+
+5. Useful Projects:
+- https://github.com/shravan-kuchkula/udacity-data-eng-proj4
+
+- PaperETL: https://github.com/neuml/paperetl
