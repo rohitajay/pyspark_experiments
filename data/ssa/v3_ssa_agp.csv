@@ -1,0 +1,6 @@
+Operation,entryDate,schoolReference_schoolId,studentReference_studentUniqueId,alternativeGraduationPlanReference_educationOrganizationId,alternativeGraduationPlanReference_graduationPlanTypeDescriptor,alternativeGraduationPlanReference_graduationSchoolYear
+CREATE,08/22/2016,185,2156683859,185,Minimum,2022
+CREATE,08/22/2016,4,9198375393,4,Minimum,2022
+CREATE,08/22/2016,43,5683127769,43,Minimum,2022
+CREATE,08/22/2016,43,3782263162,43,Minimum,2022
+CREATE,08/22/2016,13,4868538764,13,Minimum,2022
