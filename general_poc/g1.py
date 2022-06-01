@@ -15,7 +15,6 @@ def dict_nest(df_dict):
 
 base = "/home/rohitgupta/BigData_projects/pyspark_experiments/data/ssa/v3_ssa_base.csv"
 agp = "/home/rohitgupta/BigData_projects/pyspark_experiments/data/ssa/v3_ssa_agp.csv"
-
 edu_plan = "/home/rohitgupta/BigData_projects/pyspark_experiments/data/ssa/v3_ssa_educationplan.csv"
 
 df_base = pd.read_csv(base)
@@ -33,7 +32,6 @@ def merge_dfs(df_list, list_common_cols):
 
 
 merged_df = merge_dfs(df_list=df_list,list_common_cols=list_common_cols)
-
 merged_df  = merged_df.to_dict(orient= "records")
 
 nests = [dict_nest(i) for i in merged_df][0]

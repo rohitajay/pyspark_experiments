@@ -76,16 +76,51 @@ def dict_nest_1(df_dict):
             # print(k_split)
             d = {}
             new_dict = nested_set(d, k_split, value=v)
-            print(new_dict)
+            # print(new_dict)
             di.update(new_dict)
     return di
+def d1_d2_common(d1,d2):
+    keys = d1.keys() | d2.keys()
+    # print(keys)print(d1.get(k, {}
+    res = {k: {**d1.get(k, {}), **d2.get(k, {})} for k in keys}
+    return res
 
+def split_dict_equally(input_dict, chunks=2):
+    "Splits dict by keys. Returns a list of dictionaries."
+    # prep with empty dicts
+    return_list = [dict() for idx in range(chunks)]
+    idx = 0
+    for k,v in input_dict.items():
+        return_list[idx][k] = v
+        if idx < chunks-1:  # indexes start at 0
+            idx += 1
+        else:
+            idx = 0
+    return return_list
 
+import itertools
+def group(_input):
+  d = list(itertools.chain(*list(map(lambda x:list(x.items()), _input))))
+  _s = [[a, [c for _, c in b]] for a, b in itertools.groupby(sorted(d, key=lambda x:x[0]), key=lambda x:x[0])]
+  return {a:group(b) if all(isinstance(i, dict) for i in b) else list(itertools.chain(*b)) for a, b in _s}
+
+# print(group([a, b, c]))
 
 if __name__ == "__main__":
     import json
     val = {"alternativeGraduationPlans_alternativeGraduationPlanReference_educationOrganizationId" : 185,
            "alternativeGraduationPlans_alternativeGraduationPlanReference_graduationSchoolYear" : 2015,}
-    print(dict_nest_1(val))
-    # print(json.dumps(dict_nest_1(val)))
+    # print(len(val))
+
+    d1 = split_dict_equally(val, chunks=2)
+    # print(d1)
+    dits = [dict_nest_1(i) for i in d1]
+    # print(group(dits))
+    # z = {key:[dits[0][key],dits[1][key]] for key in dits[0]}
+    keys = dits[0].keys() | dits[1].keys()
+    z = {key: {dits[0].get(key,{}), dits[1].get(key,{})} for key in keys}
+    # z = {k: {dits[0][key], dits[1][key] }}
+    print(z)
+    # print(dits[0])
+    # print(d1_d2_common(dits[0],dits[1]))
     pass
