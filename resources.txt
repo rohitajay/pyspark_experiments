@@ -1,0 +1,2 @@
+1. https://towardsdatascience.com/six-spark-exercises-to-rule-them-all-242445b24565 
+2. https://github.com/nivdul/spark-in-practice
